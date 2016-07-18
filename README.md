@@ -1,3 +1,9 @@
 # teste-eotica
-rodar o comando: npm install
-após instalar as dependências, rodar o gulp
+Specifications:
+- node version - 4.4.7
+- npm version - 2.15.8
+
+For run project:
+- npm install
+- bower install
+- gulp
