@@ -1,0 +1,29 @@
+.doubts {
+	margin-bottom: $margin;
+	.content-doubts {
+		font-family: Arial;
+		@include fs(13);
+		text-align: left;
+		width: 48%;
+		@extend %vertical;
+		& + .content-doubts {
+			margin-left: 2%;
+		}
+		@include respond-to(tablet) {
+			width: 100%;
+			& + .content-doubts {
+				margin-left: 0;
+			}
+		}
+
+		.item {
+			margin-bottom: 1rem;
+			color: $darkgray;
+			line-height: 1.2rem;
+			.title {
+				color: #333;
+				font-weight: bold;
+			}
+		}
+	}
+}

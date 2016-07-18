@@ -1,0 +1,81 @@
+.gift {
+	margin: $margin auto;
+
+	.gift-item {
+		width: 27rem;
+		@extend %vertical;
+		@include respond-to(mobile) {
+			width: 100%;
+		}
+
+		& + .gift-item {
+			margin-left: 2rem;
+			@include respond-to(tablet) {
+				margin: 2rem 0 0 0;
+			}
+		}
+
+		img {
+			@extend %vertical;
+			width: 50%;
+			margin-right: 4%;
+			@include respond-to(mobile) {
+				max-width: 10rem;
+				width: 45%;
+				vertical-align: top;
+			}
+		}
+		.gift-content {
+			@extend %vertical;
+			width: 45%;
+			text-align: left;
+			color: $darkgray;
+			&.soon {
+				color: #bababa;
+				.title {
+					@include fs(24);
+					text-transform: none;
+					color: #bababa;
+				}
+				.soon {
+					font-family: $brixBold;
+					text-transform: uppercase;
+				}
+			}
+			.title {
+				font-family: $brixBold;
+				@include fs(21);
+				text-transform: uppercase;
+				color: $black;
+				@include respond-to(mobile) {
+					@include fs(18);
+				}
+			}
+			.description {
+				font-family: Arial;
+				@include fs(13);
+				line-height: 1.2rem;
+				margin: 0.6rem 0;
+				@include respond-to(mobile) {
+					line-height: 1rem;
+					@include fs(12);
+				}
+			}
+			.button {
+				background-color: $green;
+				text-decoration: none;
+				text-transform: uppercase;
+				color: $white;
+				font-family: Arial;
+				font-weight: bold;
+				display: inherit;
+				@include fs(10);
+				padding: 0.5rem 1.5rem;
+				@include prefix(transition, 0.5s);
+				&:hover {
+					background-color: $lightgreen;
+				}
+			}
+		}
+	}
+}

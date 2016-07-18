@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>eOtica</title>
+	<meta name="robots" content="index, follow">
+	<meta name="description" content="Leandro Costa">
+	<meta name="keywords" content="front-end, html, css, jquery, javascript, web, responsivo, mobile">
+	<meta name="author" content="Leandro Augusto da Costa, leandroacosta2008@gmail.com">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+	<link rel="stylesheet" href="styles/main.min.css">
+	<link rel="stylesheet" href="scripts/components/fullcalendar/dist/fullcalendar.css">
+</head>
+<body>
+	<header id="header">
+		<div class="site-area">
+			<div class="banner-content">
+				<h1 class="title">{{banner.title}}</h1>
+				<p class="description">{{banner.description}}</p>
+				<span class="obs">{{{banner.obs}}}</span>
+			</div>
+			<img src="images/{{banner.img}}" alt="{{banner.title}}" class="bg-banner">
+		</div>
+	</header>
+
+	<section id="content">
+		<article class="site-area gift">
+			{{#gift_card}}
+				<div class="gift-item">
+					<img src="images/gifts/{{img}}" alt="{{name}}">
+					{{#if soon}}
+						<div class="gift-content soon">
+							<h3 class="title">{{name}}</h3>
+							<p class="description">{{description}}</p>
+							<span class="soon">Em breve</span>
+						</div>
+					{{else}}
+						<div class="gift-content">
+							<h3 class="title">{{name}}</h3>
+							<p class="description">{{description}}</p>
+							<a href="{{link}}" class="button choice">{{button}}</a>
+						</div>
+					{{/if}}
+				</div>
+			{{/gift_card}}
+		</article>
+
+		<article class="site-area values">
+			<h2 class="title-area">Escolha o valor</h2>
+			{{#values}}
+				<div class="values-item" data-value="{{price}}">
+					<span class="price">{{price}}</span>
+					<p>{{description}}</p>
+				</div>
+			{{/values}}
+		</article>
+
+		<article class="site-area request-info">
+			<h2 class="title-area">Preencha as informações abaixo</h2>
+			<form id="form" action="">
+				<div class="form-content">
+					<fieldset>
+						<p class="fake-label">De:</p>
+						<label for="" data-error="Você deve preencher um nome.">
+							<input type="text" class="required inputs" name="name" placeholder="Seu nome">
+						</label>
+						<label for="" data-error="Informe um endereço de email válido.">
+							<input type="email" class="required inputs" name="email" placeholder="Seu e-mail">
+						</label>
+					</fieldset>
+
+					<fieldset>
+						<p class="fake-label">Para:</p>
+						<label for="" data-error="Você deve preencher um nome.">
+							<input type="text" class="required inputs" name="giftName" placeholder="Nome do presenteado">
+						</label>
+						<label for="" data-error="Informe um endereço de email válido.">
+							<input type="email" class="required inputs" name="giftEmail" placeholder="E-mail do presenteado">
+						</label>
+					</fieldset>
+
+					<fieldset>
+						<span class="counter">200</span>
+						<p class="fake-label">Quer enviar uma mensagem? (opcional)</p>
+						<textarea maxlength="200" class="inputs" name="message" id="message"></textarea>
+					</fieldset>
+
+					<a href="#" class="example">Veja um exemplo do e-mail</a>
+				</div>
+
+				<div class="calendar-content">
+					<h3 class="title">Escolha a data de envio</h3>
+					<div id="customCalendar"></div>
+
+					<p class="date">
+						agendado para <span class="day"></span> de <span class="month"></span> de <span class="year"></span>
+					</p>
+
+					<div class="obs">
+						<h4>Importante</h4>
+						<p>Independente da data escolhida, enviaremos o e-Vale Presente somente após a confirmação do pagamento.</p>
+					</div>
+				</div>
+
+				<input type="submit" class="send-button" value="comprar">
+			</form>
+		</article>
+
+		<article class="site-area how-works">
+			<h2 class="title-area">Como funciona</h2>
+
+			<div class="steps-wrapper">
+				<ul class="steps">
+					{{#how_works}}
+						{{#if obs}}
+							<li class="item friend">
+								<p class="highlight">{{{obs}}}</p>
+								<span class="number">{{number}}</span>
+								<p class="text">{{text}}</p>
+							</li>
+						{{else}}
+							<li class="item">
+								<span class="number">{{number}}</span>
+								<p class="text">{{text}}</p>
+							</li>
+						{{/if}}
+					{{/how_works}}
+				</ul>
+			</div>
+		</article>
+
+		<article class="site-area doubts">
+			<h2 class="title-area">Tire suas dúvidas</h2>
+
+			{{#each doubts}}
+				<ul class="content-doubts">
+					{{#each questions}}
+						<li class="item">
+							<h5 class="title">{{question}}</h5>
+							<p class="answer">{{answer}}</p>
+						</li>
+					{{/each}}
+				</ul>
+			{{/each}}
+		</article>
+	</section>
+
+	<script src="scripts/components/jquery/dist/jquery.js"></script>
+	<script src="scripts/components/moment/moment.js"></script>
+	<script src="scripts/components/fullcalendar/dist/fullcalendar.js"></script>
+	<script src="scripts/lang-all.js"></script>
+	<script src="scripts/main.min.js"></script>
+</body>
+</html>

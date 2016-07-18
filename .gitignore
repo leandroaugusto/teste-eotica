@@ -1,0 +1,16 @@
+# NPM
+node_modules/
+logs
+*.log
+npm-debug.log*
+
+# BOWER
+app/scripts/components/
+
+# GENERATED FILES
+dist/
+
+# OSX
+Thumbs.db
+.Trashes
+*.DS_Store

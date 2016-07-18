@@ -1,0 +1,69 @@
+/*style.css*/
+@import 'shared/reset.scss';
+@import 'shared/fonts.scss';
+@import 'shared/functions.scss';
+
+html, body {
+	position: relative;
+	text-align: center;
+	height: 100%;
+}
+
+// Common class
+.site-area {
+	position: relative;
+	height: 100%;
+	width: $break-medium;
+	margin: 0 auto;
+	display: block;
+	box-sizing: border-box;
+	overflow: hidden;
+	@include respond-to(tablet) {
+		width: 100%;
+		padding: 0 2rem;
+	}
+
+	.title-area {
+		font-family: $brixBold;
+		white-space: nowrap;
+		@include fs(21);
+		color: $black;
+		text-transform: uppercase;
+		text-align: left;
+		width: 100%;
+		margin-bottom: $margin;
+		overflow: hidden;
+		@include respond-to(mobile) {
+			@include fs(14);
+		}
+		&:after {
+			content: '';
+			background-image: url(imgs/title-pattern.png);
+			background-repeat: repeat-x;
+			background-position: left center;
+			@extend %vertical;
+			vertical-align: inherit;
+			margin-left: 0.7rem;
+			width: 100%;
+			height: 1rem;
+			position: relative;
+			@include respond-to(mobile) {
+				top: 0.2rem;
+			}
+		}
+	}
+}
+
+// Header
+@import 'areas/header.scss';
+
+// All Areas
+#content {
+	width: 100%;
+
+	@import 'areas/gift.scss';
+	@import 'areas/values.scss';
+	@import 'areas/request.scss';
+	@import 'areas/howWorks.scss';
+	@import 'areas/doubts.scss';
+}

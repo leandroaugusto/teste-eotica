@@ -1,0 +1,21 @@
+{
+  "name": "teste-eotica",
+  "description": "teste",
+  "main": "index.js",
+  "authors": [
+    "leandro costa"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/leandroaugusto",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "3.1.0",
+    "fullcalendar": "2.9.0"
+  }
+}

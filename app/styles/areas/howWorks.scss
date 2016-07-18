@@ -1,0 +1,89 @@
+.how-works {
+	.steps-wrapper {
+		width: 100%;
+		overflow: hidden;
+		position: relative;
+		@include respond-to(tablet) {
+			overflow-x: scroll;
+		}
+
+		.steps {
+			position: relative;
+			white-space: nowrap;
+			@include bg('imgs/bg-steps.png');
+			background-position: center top;
+			margin-top: $margin;
+			width: 100%;
+			float: left;
+			@include respond-to(tablet) {
+				width: auto;
+				box-sizing: border-box;
+				padding: 0 2rem;
+			}
+
+			.item {
+				@extend %vertical;
+				vertical-align: top;
+				position: relative;
+				top: -1rem;
+				width: 15%;
+				white-space: initial;
+				box-sizing: border-box;
+				padding: 0 0.2rem;
+				& + .item {
+					margin-left: 1%;
+				}
+				&.friend {
+					top: -4.8rem;
+					.number {
+						background-color: $yellow;
+					}
+				}
+				@include respond-to(tablet) {
+					width: 10rem;
+					& + .item {
+						padding: 0 0.4rem;
+						margin-left: -0.4rem;
+					}
+				}
+
+				.number {
+					border-radius: 50%;
+					box-sizing: border-box;
+					width: 2rem;
+					height: 2rem;
+					padding-top: 0.35rem;
+					background-color: $black;
+					color: $white;
+					display: inline-block;
+					@include fs(20);
+					font-family: $brixBold;
+				}
+				.text {
+					width: 100%;
+					margin-top: 1rem;
+					font-family: $brixRegular;
+					@include fs(18);
+					color: $darkgray;
+				}
+				.highlight {
+					color: $black;
+					@include fs(28);
+					font-family: $brixMedium;
+					letter-spacing: 0.1rem;
+					line-height: 2.1rem;
+					margin-bottom: 1.5rem;
+					span {
+						font-family: $brixBold;
+						color: $yellow;
+						@include fs(54);
+						display: block;
+						position: relative;
+						top: -0.4rem;
+						text-indent: -0.4rem;
+					}
+				}
+			}
+		}
+	}
+}

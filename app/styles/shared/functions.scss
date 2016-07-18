@@ -1,0 +1,84 @@
+// Variable to fonts
+$brixRegular: "brixslab-regular-webfont";
+$brixMedium: "brixslab-medium-webfont";
+$brixBold: "brixslab-bold-webfont";
+$vRegular: "vh2trial-webfont";
+
+// Variable to colors
+$white: #fff;
+$black: #000;
+$yellow: #dd8000;
+$lightyellow: #e8af28;
+$green: #18a1ab;
+$lightgreen: #4bc4b7;
+$gray: #c0c0c0;
+$darkgray: #797979;
+
+// Functions
+@function strip-units($number) {
+	@return $number / ($number * 0 + 1);
+}
+
+@function rem($number) {
+	$number: strip-units($number);
+	$number: $number / 16;
+	@return #{$number}rem;
+}
+
+// Variable to Units
+$break-small: 768px;
+$break-medium: 960px;
+$break-large: 1024px;
+
+$margin: rem(70);
+
+// Mixin to font-size REM
+@mixin fs($target) {
+	$rem: ($target / 16);
+	font-size: #{$target}px;
+	font-size: #{$rem}rem;
+}
+
+// Mixin to font-size EM
+@mixin fse($target) {
+	$rem: ($target / 16);
+	font-size: #{$target}px;
+	font-size: #{$rem}em;
+}
+
+// Mixin to bg
+@mixin bg($image-path, $position:center, $repeat:no-repeat) {
+	background-image: url($image-path);
+	background-position: $position;
+	background-repeat: $repeat;
+}
+
+// Mixin to Media query
+@mixin respond-to($media) {
+	@if $media == mobile {
+		@media only screen and (max-width: $break-small - 1) { @content; }
+	}
+	@else if $media == tablet {
+		@media only screen and (max-width: $break-medium - 1) { @content; }
+	}
+	@else if $media == desktop {
+    	@media only screen and (min-width: $break-medium) { @content; }
+	}
+}
+
+// Mixin to Prefixes
+@mixin prefix($property, $value) {
+	$prefixes:(webkit, moz, ms, o);
+	
+	@each $prefix in $prefixes {
+		#{'-' + $prefix + '-' + $property}: $value;
+	}
+ 
+	#{$property}: $value;
+}
+
+// Placeholder to vertical align
+%vertical {
+	display: inline-block;
+	vertical-align: middle;
+}

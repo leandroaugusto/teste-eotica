@@ -1,0 +1,97 @@
+#header {
+	width: 100%;
+	background-image: url(imgs/banner-pattern.jpg);
+	background-repeat: repeat-x;
+	background-position: left center;
+	background-size: auto 100%;
+	position: relative;
+	@include respond-to(tablet) {
+		height: 16rem;
+		text-align: left;
+	}
+	@include respond-to(mobile) {
+		height: 14rem;
+		text-align: center;
+	}
+
+	.banner-content {
+		color: $white;
+		@extend %vertical;
+		width: 18rem;
+		position: relative;
+		text-align: left;
+		margin-right: 9rem;
+		z-index: 1;
+		@include respond-to(tablet) {
+			margin: 2rem 0 0 0;
+		}
+		@include respond-to(mobile) {
+			margin: 3rem 0 0 0;
+			text-align: center;
+			width: 14rem;
+		}
+
+		.title {
+			font-family: $brixBold;
+			text-transform: uppercase;
+			@include fs(58);
+			margin-bottom: 0.6rem;
+			@include respond-to(mobile) {
+				@include fs(30);
+			}
+			&:after {
+				content: '';
+				width: 4rem;
+				height: 1px;
+				display: block;
+				margin-top: 0.6rem;
+				background-color: $white;
+				@include respond-to(mobile) {
+					margin: 0.6rem auto 0;
+				}
+			}
+		}
+		.description {
+			font-family: $brixRegular;
+			@include fs(18);
+			@include respond-to(mobile) {
+				@include fs(14);
+				line-height: 1.2rem;
+			}
+		}
+		.obs {
+			@include fs(25);
+			font-family: $vRegular;
+			color: #f0901b;
+			position: absolute;
+			right: -6.5rem;
+			top: -0.1rem;
+			@include prefix(transform, rotate(6deg));
+			@include respond-to(mobile) {
+				@include fs(17);
+				right: -2.6rem;
+			}
+			.second {
+				text-indent: 1.1rem;
+				display: block;
+			}
+			.third {
+				text-indent: 3.2rem;
+				display: block;
+			}
+		}
+	}
+	.bg-banner {
+		@extend %vertical;
+		height: 100%;
+		position: relative;
+		@include respond-to(tablet) {
+			position: absolute;
+			right: 0.3rem;
+			top: 0;
+		}
+		@include respond-to(mobile) {
+			display: none;
+		}
+	}
+}

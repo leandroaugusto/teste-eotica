@@ -1,0 +1,57 @@
+.values {
+	margin-bottom: $margin;
+
+	.values-item {
+		@extend %vertical;
+		width: 14rem;
+		box-sizing: border-box;
+		border: 1px solid transparent;
+		border-radius: 8px;
+		cursor: pointer;
+		padding: 1.2rem 2rem;
+		margin: 0 1.4rem;
+		@include prefix(transition, 0.5s);
+		@include respond-to(mobile) {
+			margin: 1rem 1.4rem;
+		}
+		&:hover {
+			border-color: #c6c6c6;
+			.price {
+				color: $lightgreen;
+			}
+			p {
+				color: $darkgray;
+			}
+		}
+		&.active {
+			border-color: $green;
+			.price {
+				color: $green;
+			}
+			p {
+				color: $darkgray;
+			}
+		}
+
+		.price {
+			font-family: $brixBold;
+			@include fs(67);
+			color: $gray;
+			&:before {
+				content: 'R$';
+				display: inline-block;
+				vertical-align: super;
+				@include fs(26);
+				margin-right: .5rem;
+			}
+		}
+		p {
+			font-family: Arial;
+			@include fs(13);
+			width: 98%;
+			margin: 0 auto;
+			color: $gray;
+			line-height: 1rem;
+		}
+	}
+}

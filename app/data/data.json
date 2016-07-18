@@ -1,0 +1,95 @@
+{
+	"banner": {
+		"title": "vale presente",
+		"description": "Mais de 300 opções de óculos para fazer feliz quem você gosta feliz.",
+		"obs": "Um presente<span class=\"second\">incrível para quem</span><span class=\"third\">você gosta</span>",
+		"img": "bg-banner.jpg"
+	},
+	"gift_card": [
+		{
+			"name": "Cartão Presente",
+			"description": "O seu amigo recebe em casa e troca pelo óculos que quiser",
+			"img": "vale-presente.jpg",
+			"soon": true
+		},
+		{
+			"name": "E-vale Presente",
+			"description": "Prático, é enviado por e-mail na data que você preferir",
+			"img": "cartao-presente.jpg",
+			"soon": false,
+			"button": "Escolher",
+			"link": "#"
+		}
+	],
+	"values": [
+		{
+			"price": "245",
+			"description": "Para presentear com uma armação de grau*"
+		},
+		{
+			"price": "275",
+			"description": "Para presentear um óculos de sol**"
+		}
+	],
+	"how_works": [
+		{
+			"number": "1",
+			"text": "Você escolhe o valor do presente."
+		},
+		{
+			"number": "2",
+			"text": "Indica quem receberá."
+		},
+		{
+			"number": "3",
+			"text": "Escreve uma mensagem para seu amigo."
+		},
+		{
+			"number": "4",
+			"text": "Define quando o vale-presente será entregue."
+		},
+		{
+			"number": "5",
+			"text": "Na data indicada, seu amigo recebe o Vale Presente.",
+			"obs": "Faça seu <span>amigo</span>feliz"
+		},
+		{
+			"number": "6",
+			"text": "E você recebe a confirmação de entrega."
+		}
+	],
+	"doubts": [
+		{
+			"questions": [
+				{
+					"question": "Como meu amigo poderá usar meu Vale Presente?",
+					"answer": "No próprio site da Lema21! Basta ele escolher o seu óculos favorito e inserir o código do Vale Presente na tela de pagamento."
+				},
+				{
+					"question": "É possível realizar o Serviço Provem Casa utilizando o código do Vale Presente?",
+					"answer": "Não. Infelizmente ainda não é possível"
+				},
+				{
+					"question": "E se meu amigo quiser um produto de valor maior que o Vale Presente?",
+					"answer": "Não tem problema, seu amigo pode escolher o óculos que quiser. Ao finalizar a compra, ele poderá pagar a diferença."
+				}
+			]
+		},
+		{
+			"questions": [
+				{
+					"question": "* O que meu amigo poderá comprar com R$ 245?",
+					"answer": "A maioria das armações de grau disponíveis possuem esse valor. Caso seu amigo prefira um produto de valor maior, ele poderá cobrir a diferença na tela de pagamento, é super fácil."
+				},
+				{
+					"question": "** O que meu amigo poderá comprar com R$ 275?",
+					"answer": "A maioria dos óculos de sol disponíveis possuem esse valor. Caso seu amigo prefira um produto de valor maior, ele poderá cobrir a diferença na tela de pagamento, é super fácil."
+				},
+				{
+					"question": "Quanto tempo meu amigo terá para trocar o Vale Presente?",
+					"answer": "O prazo de validade do Vale Presente é de 6 meses."
+				}
+			]
+		}
+	]
+}
